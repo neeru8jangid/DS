@@ -1,0 +1,21 @@
+class Parent:
+    @staticmethod
+    def static_method():
+        print("This is a static method in the Parent class.")
+
+class Son(Parent):
+    def _init_(self, name, age):
+        self.name = name
+        self.age = age
+
+    def display_info(self):
+        print(f"Name: {self.name}, Age: {self.age}")
+
+# Using the static method from the Parent class
+Parent.static_method()  # Output: This is a static method in the Parent class.
+
+# Creating an instance of the Son class
+son_instance = Son(name="John", age=20)
+
+# Using the display_info method from the Son class
+son_instance.display_info()  # Output: Name: John, Age: 20
