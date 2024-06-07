@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .hero {
+            height: 100vh;
+            background: url('static/bg image.jpg') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+        .about, .portfolio, .contact {
+            padding: 60px 0;
+        }
+        .portfolio img {
+            width: 100%;
+            height: auto;
+        }
+        .resume-btn {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">My Portfolio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#portfolio">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="static/Resume Neeru Jangid.pdf" target="_blank">Resume</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero text-center">
+        <div>
+            <h1>Welcome to My Portfolio</h1>
+            <p>Discover My Work and Projects</p>
+            <a href="static/Resume Neeru Jangid.pdf" target="_blank" class="btn btn-light resume-btn">View Resume</a>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about bg-light text-center">
+        <div class="container">
+            <h2>About Me</h2>
+            <p class="lead">Hello! I'm Neery Jangid, a third-year B.Tech student specializing in Computer Science and Engineering. With a passion for technology and innovation. My aim is to leverage my skills to build impactful and efficient technological solutions. Let's connect and explore opportunities to collaborate on exciting projects!</p>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio text-center">
+        <div class="container">
+            <h2>My Work</h2>
+            <div class="row">
+                
+                <div class="col-md-4">
+                    <img src="static/project.png" alt="Project ">
+                    <h3>Project 1</h3>
+                    <a href="https://github.com/neeru8jangid/DS/tree/main/CLI%20based%20chat%20application" class="btn btn-dark">View Project</a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact bg-light text-center">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p class="lead">Have a question or want to work together?</p>
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" placeholder="Name">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="email" class="form-control" placeholder="Email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" rows="4" placeholder="Message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-dark">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
