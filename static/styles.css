@@ -1,0 +1,93 @@
+/* PREMIUM UI — styles.css (put in same folder) */
+
+:root{
+  --bg1:#0f0c29; --bg2:#302b63; --bg3:#24243e;
+  --accent: linear-gradient(135deg,#00d2ff,#3a7bd5);
+  --glass: rgba(255,255,255,0.08);
+  --white: #ffffff; --muted:#cbd5e1;
+  --radius:18px;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;}
+.gradient-bg{
+  background: linear-gradient(135deg,var(--bg1),var(--bg2),var(--bg3));
+  min-height:100vh;color:var(--white);
+}
+
+/* Centering for login */
+.center-page{display:flex;align-items:center;justify-content:center;height:100vh;padding:20px}
+
+/* Glass card */
+.glass-card{
+  width:520px;padding:32px;border-radius:20px;
+  backdrop-filter: blur(16px);background:var(--glass);
+  border:1px solid rgba(255,255,255,0.12);box-shadow:0 18px 40px rgba(0,0,0,0.45);
+  text-align:center;
+}
+
+/* Titles */
+.title-xl{font-size:28px;margin:0 0 6px;font-weight:700}
+.subtitle{opacity:0.85;margin-bottom:18px}
+
+/* Buttons */
+.btn-glow{
+  padding:12px 18px;border-radius:12px;border:0;color:#fff;font-weight:600;
+  background: linear-gradient(90deg,#00c6ff,#0072ff); box-shadow:0 8px 30px rgba(0,110,255,0.18);
+  cursor:pointer;
+}
+.btn-outline{
+  padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.12);
+  background:transparent;color:#fff;cursor:pointer;margin-left:8px;
+}
+.btn-small{padding:8px 10px;border-radius:8px;border:0;background:rgba(255,255,255,0.06);color:#fff;cursor:pointer}
+
+/* Divider */
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.06),transparent);margin:16px 0}
+
+/* Nav */
+.nav-glass{position:sticky;top:0;backdrop-filter: blur(12px);background:rgba(255,255,255,0.03);border-bottom:1px solid rgba(255,255,255,0.03)}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:14px}
+.nav-title{font-size:18px}
+
+/* Content / panels */
+.content{max-width:1100px;margin:30px auto;padding:0 20px}
+.glass-panel{padding:26px;border-radius:20px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);box-shadow:0 10px 35px rgba(0,0,0,0.35);margin-bottom:20px}
+.large-panel{padding:32px}
+.panel-title{margin:0 0 14px;font-size:20px;font-weight:600}
+
+/* Grid form */
+.grid-form{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.input-block{display:flex;flex-direction:column}
+.input-block label{font-size:13px;color:var(--muted);margin-bottom:6px}
+input[type="number"], input[type="text"], select{
+  padding:12px;border-radius:12px;border:none;background:rgba(255,255,255,0.06);color:#fff;font-size:15px;
+}
+.actions-block{display:flex;align-items:center;gap:12px}
+
+/* Results */
+.card-row{display:flex;gap:18px;flex-wrap:wrap}
+.result-card{flex:1;min-width:260px;background:rgba(255,255,255,0.03);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.06)}
+.result-text{font-size:15px;margin-top:8px;color:#ecfeff}
+.muted{color:var(--muted)}
+
+/* Chatbox */
+.chat-box{height:120px;border-radius:10px;background:rgba(255,255,255,0.02);padding:10px;overflow:auto;color:var(--muted)}
+.chat-controls{display:flex;gap:8px;margin-top:10px}
+.chat-controls input{flex:1;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:#fff}
+
+/* Footer */
+.foot{text-align:center;color:var(--muted);padding:10px 0}
+
+/* small screens */
+@media (max-width:640px){
+  .glass-card{width:92%}
+  .grid-form{grid-template-columns:1fr}
+}
+
+/* simple animations */
+.animate-fade{animation:fadeIn .45s ease forwards}
+.animate-slide{animation:slideIn .45s ease forwards}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}

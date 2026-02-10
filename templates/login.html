@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Sign in • Crop Intelligence</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  
+</head>
+<body class="gradient-bg center-page">
+  <div class="glass-card login-card animate-fade">
+    <h1 class="title-xl">Crop Intelligence</h1>
+    <p class="subtitle">Sign in to access the dashboard</p>
+
+    <!-- Simple form: action goes to index.html (since app.py handles server routes) -->
+    <form id="loginForm" action="{{ url_for('dashboard') }}" method="get" class="form">
+      <label>Username</label>
+      <input id="username" name="username" type="text" placeholder="Enter username" required>
+
+      <label>Password</label>
+      <input id="password" name="password" type="password" placeholder="Enter password" required>
+
+      <button class="btn-glow" type="submit">Sign In</button>
+    </form>
+
+    <div class="divider"></div>
+
+    <button class="btn-outline" onclick="location.href='index.html'">Continue with Google</button>
+    <button class="btn-outline mt8" onclick="location.href='index.html'">Login with Mobile OTP</button>
+  </div>
+</body>
+
+<script src="{{ url_for('static', filename='script.js') }}"> </script>
+
+</html>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Dashboard • Crop Intelligence</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+
+<body class="gradient-bg">
+
+  <header class="nav-glass">
+    <div class="nav-inner">
+      <h2 class="nav-title">Crop Intelligence Dashboard</h2>
+      <div class="nav-actions">
+        <button class="btn-small" onclick="location.href='/about'">About</button>
+        <button class="btn-small" onclick="location.href='/crop-tips'">Tips</button>
+        <button class="btn-small" onclick="location.href='/contact'">Contact</button>
+        <button class="btn-small" onclick="location.href='/login'">Sign Out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="content">
+    <div class="glass-panel large-panel animate-slide">
+      <h2 class="panel-title">Enter crop & environment details</h2>
+
+      <form id="predictForm" class="grid-form" onsubmit="return false;">
+        <div class="input-block">
+          <label>Nitrogen (N)</label>
+          <input id="N" type="number" placeholder="e.g. 90" step="0.1" required>
+        </div>
+
+        <div class="input-block">
+          <label>Phosphorus (P)</label>
+          <input id="P" type="number" placeholder="e.g. 42" step="0.1" required>
+        </div>
+
+        <div class="input-block">
+          <label>Potassium (K)</label>
+          <input id="K" type="number" placeholder="e.g. 43" step="0.1" required>
+        </div>
+
+        <div class="input-block">
+          <label>Temperature (°C)</label>
+          <input id="temperature" type="number" placeholder="e.g. 25" step="0.1" required>
+        </div>
+
+        <div class="input-block">
+          <label>Humidity (%)</label>
+          <input id="humidity" type="number" placeholder="e.g. 80" step="0.1" required>
+        </div>
+
+        <div class="input-block">
+          <label>pH</label>
+          <input id="ph" type="number" placeholder="e.g. 6.5" step="0.01" required>
+        </div>
+
+        <div class="input-block">
+          <label>Rainfall (mm)</label>
+          <input id="rainfall" type="number" placeholder="e.g. 200" step="0.1" required>
+        </div>
+
+        <div class="actions-block" style="grid-column:1/-1">
+          <button id="btnPredict" class="btn-glow" type="button">Generate Recommendation</button>
+          <button id="btnReset" class="btn-outline" type="button">Reset</button>
+          <label class="mock-toggle"><input id="mockCheckbox" type="checkbox"> MOCK</label>
+        </div>
+      </form>
+    </div>
+
+    <div class="glass-panel results-panel animate-fade" id="resultsPanel" hidden>
+      <h2 class="panel-title">Recommendations</h2>
+
+      <div id="apiError" style="color:red; margin-bottom:10px;" hidden></div>
+
+      <div class="card-row">
+        <div class="result-card">
+          <h3>Recommended Crop</h3>
+          <p id="resultCrop" class="result-text">—</p>
+        </div>
+
+        <div class="result-card">
+          <h3>Notes</h3>
+          <p id="resultNotes" class="result-text muted">Submit inputs to get tailored notes.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chatbot placeholder: you can hook Gemini/OpenAI here later -->
+    <div class="glass-panel chat-panel animate-fade">
+      <h3 class="panel-title">Assistant (Beta)</h3>
+      <div id="chatBox" class="chat-box">
+        <div class="chat-muted">Ask the assistant about crops, inputs, or presentation tips.</div>
+      </div>
+      <div class="chat-controls">
+        <input id="chatInput" type="text" placeholder="Ask something..." />
+        <button id="chatSend" class="btn-small">Send</button>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="foot">
+    <div class="container">Prototype • Use MOCK for testing without the model</div>
+  </footer>
+
+</body>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</html>
