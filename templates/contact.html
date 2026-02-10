@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact Us • Crop Intelligence</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body class="gradient-bg">
+
+<header class="nav-glass">
+    <div class="nav-inner">
+        <h2 class="nav-title">Contact Us</h2>
+        <div class="nav-actions">
+            <button class="btn-small" onclick="location.href='/dashboard'">Dashboard</button>
+        </div>
+    </div>
+</header>
+
+<main class="content">
+    <div class="glass-panel large-panel animate-slide">
+
+        <h2 class="panel-title">Get in Touch</h2>
+
+        <p class="muted">
+            If you have questions, feedback, or need help with the Crop Intelligence system,  
+            feel free to reach out using the details below.
+        </p>
+
+        <div class="card-row">
+
+            <div class="result-card">
+                <h3>Email</h3>
+                <p>support@cropintelligence.ai</p>
+            </div>
+
+            <div class="result-card">
+                <h3>Phone</h3>
+                <p>+91 98765 43210</p>
+            </div>
+
+            <div class="result-card">
+                <h3>Project Team</h3>
+                <p>Meg • Luigi • Team CropAI</p>
+            </div>
+
+        </div>
+
+        <h3 style="margin-top: 25px;">Send us a message</h3>
+
+        <form class="grid-form" onsubmit="alert('Message submitted! (demo)'); return false;">
+            <div class="input-block">
+                <label>Your Name</label>
+                <input type="text" required placeholder="Enter your name">
+            </div>
+
+            <div class="input-block">
+                <label>Email</label>
+                <input type="email" required placeholder="Enter your email">
+            </div>
+
+            <div class="input-block" style="grid-column: 1/-1;">
+                <label>Your Message</label>
+                <textarea required placeholder="Write your message..." style="height:120px;"></textarea>
+            </div>
+
+            <button class="btn-glow" type="submit">Send</button>
+        </form>
+
+    </div>
+</main>
+
+<footer class="foot">
+    <div class="container">Crop Intelligence • Contact Page</div>
+</footer>
+
+</body>
+</html>
